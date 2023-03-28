@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>net salry calculator</title>
+    </head>
+    <body>
+        <script>
+            //take input of basic salary
+            let basicSalary=prompt("enter basic salary")
+            let benefits =prompts("enter benefits")
+
+            //calculate gross salary
+            let grossSalary=parseInt(basicSalary)+parseInt(benefits)
+
+            //tax
+            function calculateTax(grossSalary){
+                if (grossSalary<=24000){
+                     return grossSalary*0.9
+                }else if(grossSalary=>24000&&grossSalary<=32333){
+                    return grossSalary*0.75
+                }else if(grossSalary>32333){
+                    return grossSalary*0.7
+                }
+            }
+            function nhifDeduction(grossSalary){
+                if (grossSalary<=5900){
+                    return grossSalary-150
+                }else if (grossSalary>5900&&grossSalary<=15000){
+                    return grossSalary-600
+                }else if (grossSalary>15000&&grossSalary<=39500){
+                    return grossSalary-950
+                }else if (grossSalary>39500&&grossSalary<=69000){
+                    return grossSalary-1300
+                }else if (grossSalary>69000){
+                    return grossSalary-1700
+                }
+            }
+            function nssfDeductions(grossSalary){
+                if (grossSalary<18000){
+                    return grossSalary*0.94
+                }else if(grossSalary>18000){
+                    return grossSalary*0.94*2
+                }
+            }
+            let netSalary=(grossSalary-(nhifDeduction+nssfDeductions))  
+
+
+        </script>
+    </body>
+</html>

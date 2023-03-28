@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>speed detector</title>
+    </head>
+    <body>
+        <script>
+            //get car speed 
+            function getCarSpeed(speed){
+                if (speed<70){
+                    return "Ok"
+                }else if (speed>70){
+                    //calculate demerit points
+                    let demeritPoints=((speed-70)/5);
+                    if (demeritPoints>12){
+                        return "licence suspended"
+                    }else{
+                        return "demeritPoints"
+                    }
+                }
+            }
+            let speed =prompt("input car speed")
+        </script>
+    </body>
+
+    
+</html>
